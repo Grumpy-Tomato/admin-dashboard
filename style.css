@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,34 +10,119 @@ body {
     width: 100vw;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
+    background-color: lightgrey;
 }
 
 #nav-bar {
-    background-color: red;
+    background-color: rgb(68, 68, 222);
     grid-column: 1 / span 3;
     grid-row: 1 / span 12;
+    display: grid;
+    text-shadow: 1px 1px 5px black;
 }
 
+#nav-header {
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#nav-bar li {
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    gap: 5%;
+}
+
+
+#nav-bar img {
+    object-fit: fill;
+    max-width: clamp(10px, 20%, 30px);
+}
+
+#nav-bar p {
+    font-size: 1.2rem;
+    color: white;
+}
 #header {
-    background-color: blue;
+    background-color: white;
     grid-column: 4 / span 9;
     grid-row: 1 / span 2;
 }
 
 #header-top {
     display: flex;
+    justify-content: space-between;
 }
+
+#header-top input {
+    width: 40vh;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+#header-top > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-bar {
+    background-color: lightgrey;
+}
+
+#user-info-section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
 
 #header-bottom {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-bottom > div {
+    display: flex;
+}
+
+#user-upload {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+#user-upload > button {
+    display: flex;
+    background-color: rgb(68, 68, 222);
+    height: 40px;
+    width: 30%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+#notification-icon img {
+    max-width: 50px;
+}
+
+#profile-picture img {
+    max-width: 50px;
 }
 
 #content {
-    background-color: green;
     grid-area: 3 / 4 / -1 / -1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     margin: 20px;
     gap: 20px;
 }
@@ -52,7 +138,7 @@ body {
 }
 #project-two {
     grid-column: 5 / span 4;
-    grid-row: 1 / span 1;
+    grid-row: 1 / span 2;
 }
 
 #project-three {
@@ -74,6 +160,8 @@ body {
 #announcement-card {
     background-color: purple;
     border: solid black;
+    grid-column: 9 / -1;
+    grid-row: 1 / span 1;
 }
 
 #trending-card {
